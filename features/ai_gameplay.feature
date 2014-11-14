@@ -7,4 +7,3 @@ Feature: In order to have some fun
     Given I am on the homepage
     When I register to play the game
     Then I should be asked to play against the AI or another user
-    
