@@ -6,7 +6,11 @@ class RockPaperScissors < Sinatra::Base
   enable :sessions
 
   get '/' do
-    'Hello RockPaperScissors!'
+    erb :index
+  end
+
+  post '/' do
+    erb :choose_opponent
   end
 
   # start the server if ruby file executed directly
