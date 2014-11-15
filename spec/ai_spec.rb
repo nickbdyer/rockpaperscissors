@@ -25,6 +25,4 @@ require 'ai'
     expect(ai_rps.options).to include(ai_rps.make_selection)
   end
 
-
-
 end
