@@ -3,7 +3,7 @@ class Ai
   attr_reader :options
 
   def initialize(*args)
-    @options = args
+    @options = args.map{|arg| arg.new }
   end
 
 
