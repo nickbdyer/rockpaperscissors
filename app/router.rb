@@ -13,6 +13,10 @@ class RockPaperScissors < Sinatra::Base
     erb :choose_opponent
   end
 
+  get '/ai' do
+    erb :ai
+  end
+
   # start the server if ruby file executed directly
   run! if app_file == $0
 end

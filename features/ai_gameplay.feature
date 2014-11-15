@@ -7,3 +7,8 @@ Feature: In order to have some fun
     Given I am on the homepage
     When I register to play the game
     Then I should be asked to play against the AI or another user
+
+  Scenario: Playing against the AI
+    Given I am playing against the AI
+    When I choose an option
+    Then I should find out if I have won or not
