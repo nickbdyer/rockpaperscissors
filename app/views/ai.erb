@@ -1,0 +1,14 @@
+<% if GAME.evaluate == nil %>
+  Please make a selection: 
+<% elsif GAME.evaluate == "Draw" %>
+ Draw! 
+<% else %>
+  <%= GAME.evaluate.name %> wins!
+<% end %>
+
+<form method="post" action="/ai">
+  <input type="submit" name="user_rps" value=Rock>
+  <input type="submit" name="user_rps" value=Paper>
+  <input type="submit" name="user_rps" value=Scissors>
+</form>
+
