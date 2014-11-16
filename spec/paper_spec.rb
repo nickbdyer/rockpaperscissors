@@ -9,7 +9,7 @@ describe "Paper" do
     expect(paper.class).to eq Paper
   end
 
-  it "should know if it is a winning selecton" do
+  it "should know what class it beats" do
     expect(paper.won?(rock)).to be true
   end
 
