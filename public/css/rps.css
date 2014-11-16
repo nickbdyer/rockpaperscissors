@@ -1,0 +1,14 @@
+body {
+  background-color:#27ae60;
+  color: white;
+  font-family:sans-serif;
+  text-align:center;
+}
+
+h1 {
+  text-align:center;
+}
+
+input { 
+  float:center;
+}
