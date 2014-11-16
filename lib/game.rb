@@ -16,7 +16,7 @@ class Game
   end
 
   def evaluate
-    return "Draw" if player1.selection == player2.selection
+    return "Draw" if player1.selection.class == player2.selection.class
     return player1 if player1.selection.won?(player2.selection)
     return player2 if player2.selection.won?(player1.selection)
   end
