@@ -30,4 +30,9 @@ describe "Game" do
     expect(game.evaluate).to eq "Draw"
   end
 
+  it "should know if it has two players" do
+    player3 = double :player
+    expect{game.add_player(player3)}.to raise_error ("There are already two players.")
+  end
+
 end

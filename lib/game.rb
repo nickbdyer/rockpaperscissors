@@ -7,6 +7,7 @@ class Game
   end
 
   def add_player(player)
+    raise ("There are already two players.") if has_two_players?
     @player1.nil? ? @player1 = player : @player2 = player
   end
 
@@ -18,6 +19,12 @@ class Game
     return "Draw" if player1.selection == player2.selection
     return player1 if player1.selection.won?(player2.selection)
     return player2 if player2.selection.won?(player1.selection)
+  end
+
+  private
+
+  def has_two_players?
+    !player2.nil?
   end
 
 end
