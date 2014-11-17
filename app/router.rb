@@ -46,6 +46,18 @@ class RockPaperScissors < Sinatra::Base
     erb :ai
   end
 
+  get '/user' do
+    @player = GAME.players.select { |player| player.object_id == session[:me] }.first
+    erb :user
+  end
+
+  post '/user' do
+    @player = GAME.players.select { |player| player.object_id == session[:me] }.first
+    @opponent = GAME.players.select { |player| player.object_id != session[:me] }.first
+    @player.make_selection(eval(params[:user_rps]))
+    erb :user
+  end
+
   get '/reset_game' do
     GAME = Game.new
   end
