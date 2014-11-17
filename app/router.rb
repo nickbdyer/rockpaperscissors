@@ -30,21 +30,17 @@ class RockPaperScissors < Sinatra::Base
     @ai = Ai.new(Rock, Paper, Scissors)
     session[:ai] = @ai.object_id
     GAME.add_player(@ai)
-   
-
     erb :ai
   end
 
   post '/ai' do
     @player = GAME.players.select { |player| player.object_id == session[:me] }.first
     @ai = GAME.players.select { |player| player.object_id == session[:ai] }.first
-    p session
-    p params
     @player.make_selection(eval(params[:user_rps]))
     @ai.make_selection
-
     erb :ai
   end
+
 
   get '/user' do
     @player = GAME.players.select { |player| player.object_id == session[:me] }.first

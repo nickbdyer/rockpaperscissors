@@ -3,6 +3,8 @@ Given(/^I am on the homepage$/) do
 end
 
 When(/^I register to play the game$/) do
+  visit'/reset_game'
+  visit'/'
   fill_in 'player_name', with: 'Nick'
   click_button 'Register'
 end
@@ -24,4 +26,9 @@ end
 
 Then(/^I should find out if I have won or not$/) do
   expect(page).to have_content("wins!")
+end
+
+Given(/^I am playing against another user$/) do
+  step("I register to play the game")
+  click_button 'user' # express the regexp above with the code you wish you had
 end
