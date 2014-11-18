@@ -1,8 +1,6 @@
 class Ai
 
-  attr_reader :options
-  attr_reader :selection
-  attr_reader :name
+  attr_reader :options, :selection, :name
 
   def initialize(*args)
     @name = "HAL 9000"
