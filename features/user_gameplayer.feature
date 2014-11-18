@@ -8,7 +8,7 @@ Feature: In order to have some fun
     When I register to play the game
     Then I should be asked to play against the AI or another user
 
-  Scenario: Playing against another user
+  Scenario: Starting against another user
     Given I am playing against another user
     When I choose an option
-    Then I should find out if I have won or not
+    Then I should wait until player2 has made a selection

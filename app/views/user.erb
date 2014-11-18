@@ -1,14 +1,19 @@
-<% if GAME.evaluate == nil %>
-  Please make a selection: 
-<% elsif GAME.evaluate == "Draw" %>
- Nobody wins! It is a draw! 
+<% if GAME.player2 == nil %>
+  Waiting for player 2.
 <% else %>
-  <%= GAME.evaluate.name %> wins!
-<% end %>
+  <% if GAME.evaluate == nil %>
+    Please make a selection: 
+  <% elsif GAME.evaluate == "Draw" %>
+   Nobody wins! It is a draw! 
+  <% else %>
+    <%= GAME.evaluate.name %> wins!
+  <% end %>
 
-<form method="post" action="/user">
-  <input type="submit" name="user_rps" value=Rock>
-  <input type="submit" name="user_rps" value=Paper>
-  <input type="submit" name="user_rps" value=Scissors>
-</form>
+  <form method="post" action="/user">
+    <input type="submit" name="user_rps" value=Rock>
+    <input type="submit" name="user_rps" value=Paper>
+    <input type="submit" name="user_rps" value=Scissors>
+  </form>
+  
+<% end %>
 
