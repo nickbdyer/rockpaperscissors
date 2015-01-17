@@ -5,8 +5,8 @@ describe "Game" do
   let(:game)     { Game.new                        }
   let(:player)   { double :player, selection: rock }
   let(:ai)       { double :ai, selection: scissors }
-  let(:rock)     { double :rock, won?: true        }
-  let(:scissors) { double :scissors, won?: false   }
+  let(:rock)     { double :rock, won?: true, :class => Rock }
+  let(:scissors) { double :scissors, won?: false, :class => Scissors }
 
   before(:each) do
     game.add_player(player)

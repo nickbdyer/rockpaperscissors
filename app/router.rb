@@ -20,6 +20,7 @@ class RockPaperScissors < Sinatra::Base
   post '/' do
     @player = Player.new
     @player.name = params[:player_name]
+    GAME.add_player(@player)
     session[:me] = @player.object_id
     erb :choose_opponent
   end
@@ -28,7 +29,6 @@ class RockPaperScissors < Sinatra::Base
     @player = GAME.players.select { |player| player.object_id == session[:me] }.first
     @ai = Ai.new(Rock, Paper, Scissors)
     session[:ai] = @ai.object_id
-    GAME.add_player(@player)
     GAME.add_player(@ai)
     erb :ai
   end
@@ -44,7 +44,6 @@ class RockPaperScissors < Sinatra::Base
 
   get '/user' do
     @player = GAME.players.select { |player| player.object_id == session[:me] }.first
-    GAME.add_player(@player)
     erb :user, :layout => :layout_refresh
   end
 
