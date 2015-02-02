@@ -1,6 +1,8 @@
 Rock, Paper, Scissors
 =====================
 
+[![Code Climate](https://codeclimate.com/github/nickbdyer/rockpaperscissors/badges/gpa.svg)](https://codeclimate.com/github/nickbdyer/rockpaperscissors)
+
 Week 3 Challenge at Makers Academy
 
 Your task is to provide a Rock, Paper, Scissors game for them so they can play on the web with the following features:
