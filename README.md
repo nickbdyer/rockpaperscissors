@@ -1,7 +1,7 @@
 Rock, Paper, Scissors
 =====================
 
-[![Code Climate](https://codeclimate.com/github/nickbdyer/rockpaperscissors/badges/gpa.svg)](https://codeclimate.com/github/nickbdyer/rockpaperscissors)
+[![Code Climate](https://codeclimate.com/github/nickbdyer/rockpaperscissors/badges/gpa.svg)](https://codeclimate.com/github/nickbdyer/rockpaperscissors) [![Test Coverage](https://codeclimate.com/github/nickbdyer/rockpaperscissors/badges/coverage.svg)](https://codeclimate.com/github/nickbdyer/rockpaperscissors)
 
 Week 3 Challenge at Makers Academy
 

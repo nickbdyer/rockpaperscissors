@@ -6,5 +6,6 @@ group :development, :test do
   gem 'capybara'
   gem 'cucumber'
   gem 'cucumber-sinatra'
+  gem 'codeclimate-test-reporter'
   gem 'rspec'
 end
