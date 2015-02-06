@@ -25,8 +25,12 @@ class RockPaperScissors < Sinatra::Base
     erb :choose_opponent
   end
 
-  get '/ai' do
+  before '/ai' do
     @player = GAME.players.select { |player| player.object_id == session[:me] }.first
+    @ai = GAME.players.select { |player| player.object_id == session[:ai] }.first
+  end
+
+  get '/ai' do
     @ai = Ai.new(Rock, Paper, Scissors)
     session[:ai] = @ai.object_id
     GAME.add_player(@ai)
@@ -34,23 +38,22 @@ class RockPaperScissors < Sinatra::Base
   end
 
   post '/ai' do
-    @player = GAME.players.select { |player| player.object_id == session[:me] }.first
-    @ai = GAME.players.select { |player| player.object_id == session[:ai] }.first
-    @player.make_selection(eval(params[:user_rps]))
+    @player.make_selection(send(params[:user_rps]))
     @ai.make_selection
     erb :ai
   end
 
+  before '/user' do
+    @player = GAME.players.select { |player| player.object_id == session[:me] }.first
+  end
 
   get '/user' do
-    @player = GAME.players.select { |player| player.object_id == session[:me] }.first
     erb :user, :layout => :layout_refresh
   end
 
   post '/user' do
-    @player = GAME.players.select { |player| player.object_id == session[:me] }.first
     @opponent = GAME.players.select { |player| player.object_id != session[:me] }.first
-    @player.make_selection(eval(params[:user_rps]))
+    @player.make_selection(send(params[:user_rps]))
     erb :user
   end
 
