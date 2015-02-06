@@ -4,7 +4,7 @@ class Player
   attr_accessor :name
 
   def make_selection(object)
-    @selection = object.new
+    @selection = Kernel.const_get(object).new
   end
 
 end
